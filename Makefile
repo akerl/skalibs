@@ -6,7 +6,7 @@ install: .done .installed
 	@test -d package && package/compile && : > .done
 
 .installed:
-	@test -d package && package/upgrade && package/export && package/run && : > .installed
+	@test -d package && package/export && : > .installed
 
 clean:
 	@test -d package && rm -rf compile .done .installed
