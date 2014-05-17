@@ -1,0 +1,2 @@
+#define HASPPOLL
+/* sysdep: +ppoll */
