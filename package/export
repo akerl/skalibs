@@ -91,6 +91,7 @@ exportlibexec()
 exportit command
 exportit library
 test -f compile/export/flag-allstatic || exportdynlibs library.so
+test -f compile/export/flag-slashpackage || exportlibexec command
 exportit include
 exportit man
 exportit doc
