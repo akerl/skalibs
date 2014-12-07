@@ -11,7 +11,11 @@ container:
 	./meta/launch
 
 build:
+	rm -rf /tmp/skalibs-build
+	cp -R upstream /tmp/skalibs-build
 	patch upstream/src/sys/gen-EXPORT < patches/gen-EXPORT.patch
+	touch conf-compile/flag-usert conf-compile/flag-usemon
+	rm conf-compile/flag-slashpackage
 	make -C upstream
 
 push:
