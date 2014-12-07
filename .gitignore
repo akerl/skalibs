@@ -1,9 +1,0 @@
-.done
-.installed
-compile/
-include/
-library.so/
-library/
-sysdeps/
-new.tar.gz
-prog/

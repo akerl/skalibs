@@ -1,0 +1,74 @@
+linux-3.17.0_1-:-:-:genuineintel-000306e4-1fc98b75-:-
+#!/bin/sh -e
+# WARNING: This file was auto-generated. Do not edit!
+
+exec gcc -O2 -W -Wall -pipe -fomit-frame-pointer -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables -c -I . ${1+"$@"}
+#!/bin/sh -e
+# WARNING: This file was auto-generated. Do not edit!
+
+main="$1" ; shift
+gcc -Wl,--allow-shlib-undefined -L . -o "$main" "$main".o ${1+"$@"}
+exec strip "$main"
+-lutil
+/* sysdep: -devtcp */
+/* sysdep: -devptc */
+/* sysdep: +devptmx */
+/* sysdep: +devrandom */
+/* sysdep: +devurandom */
+/* sysdep: +dirent */
+/* sysdep: +eproto */
+/* sysdep: +flock */
+/* sysdep: +getpt */
+/* sysdep: -getpeereid */
+/* sysdep: +SO_PEERCRED */
+/* sysdep: +malloc0 */
+/* sysdep: +mkfifo */
+/* sysdep: -npbg1 */
+/* sysdep: +pollh */
+/* sysdep: +syspollh */
+/* sysdep: +poll */
+/* sysdep: +sigaction */
+/* sysdep: +sigprocmask */
+/* sysdep: +ppoll */
+/* sysdep: +setgroups */
+/* sysdep: +sysselect */
+/* sysdep: +revoke */
+/* sysdep: +waitpid */
+/* sysdep: -ulong32 */
+/* sysdep: +ulong64 */
+/* sysdep: sizeofulong: 8 */
+/* sysdep: -utilh */
+/* sysdep: -libutilh */
+/* sysdep: +ptyh */
+/* sysdep: -_getpty */
+/* sysdep: +openpty */
+/* sysdep: -unixh */
+/* sysdep: +streams */
+/* sysdep: +little_endian */
+/* sysdep: -big_endian */
+/* sysdep: -egd */
+/* sysdep: -tiocremote */
+/* sysdep: +posixglob */
+/* sysdep: +stdinth */
+/* sysdep: +inttypesh */
+/* sysdep: +uint64t */
+/* sysdep: +openat */
+/* sysdep: +rdtsc */
+/* sysdep: -gethrtime */
+/* sysdep: +sendfile */
+/* sysdep: +splice */
+/* sysdep: +pipe2 */
+/* sysdep: +accept4 */
+/* sysdep: +gettimeofday */
+/* sysdep: +settimeofday */
+/* sysdep: +eventfd */
+/* sysdep: +signalfd */
+/* sysdep: +regex */
+/* sysdep: +clockrt */
+/* sysdep: +clockmon */
+/* sysdep: +ipv6 */
+/* sysdep: -ancilautoclose */
+/* sysdep: sizeofushort: 2 */
+/* sysdep: sizeofuint: 4 */
+/* sysdep: sizeofgid: 4 */
+/* sysdep: sizeoftime: 8 */
