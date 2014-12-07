@@ -73,7 +73,7 @@ index 583ed59..376592b 100644
  
  .installed:
 -	@test -d package && package/upgrade && package/export && package/run && : > .installed
-+	@test -d package && package/upgrade && : > .installed
++	@test -d package && package/export && : > .installed
  
  clean:
  	@test -d package && rm -rf compile .done .installed
