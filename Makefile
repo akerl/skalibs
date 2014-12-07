@@ -20,7 +20,7 @@ build:
 push:
 	git commit -am "$$(cat upstream/package/version)" || true
 	ssh -oStrictHostKeyChecking=no git@github.com &>/dev/null || true
-	git tag -f "$$(cat upstream/package/version)"
+	git tag -f "$$(cat upstream/package/version)" || true
 	git push origin :"$$(cat upstream/package/version)"
 	git push --tags origin master
 	targit -a .github -c -f akerl/skalib $$(cat upstream/package/version) skalibs.tar.gz
