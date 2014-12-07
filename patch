@@ -64,3 +64,16 @@ index 944b176..8bebcc3 100755
  ls -1 deps-exe
  
  for file in `ls -1 deps-lib` ; do
+diff --git a/Makefile b/Makefile
+index 583ed59..376592b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -6,7 +6,7 @@ install: .done .installed
+ 	@test -d package && package/compile && : > .done
+ 
+ .installed:
+-	@test -d package && package/upgrade && package/export && package/run && : > .installed
++	@test -d package && package/upgrade && : > .installed
+ 
+ clean:
+ 	@test -d package && rm -rf compile .done .installed
