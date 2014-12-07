@@ -1,6 +1,9 @@
-BUILD_DIR = /tmp/skalibs-build
+PACKAGE = skalibs
+BUILD_DIR = /tmp/$(PACKAGE)-build
+RELEASE_DIR = /tmp/$(PACKAGE)-release
+RELEASE_FILE = $(PACKAGE).tar.gz
 
-.PHONY : default build_container manual container build push local
+.PHONY : default manual container build push local
 
 default: container
 
@@ -15,7 +18,7 @@ build:
 	cp -R upstream $(BUILD_DIR)
 	patch -d $(BUILD_DIR) -p1 < patch
 	make -C $(BUILD_DIR) install
-	tar -czv -C /tmp/skalibs-release -f skalibs.tar.gz .
+	tar -czv -C $(RELEASE_DIR) -f $(RELEASE_FILE) .
 
 push:
 	git commit -am "$$(cat upstream/package/version)" || true
@@ -23,7 +26,7 @@ push:
 	git tag -f "$$(cat upstream/package/version)"
 	git push origin :"$$(cat upstream/package/version)" || true
 	git push --tags origin master
-	targit -a .github -c -f akerl/skalibs $$(cat upstream/package/version) skalibs.tar.gz
+	targit -a .github -c -f akerl/skalibs $$(cat upstream/package/version) $(RELEASE_FILE)
 
 local: build push
 
