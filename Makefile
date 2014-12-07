@@ -5,7 +5,7 @@ RELEASE_FILE = $(PACKAGE).tar.gz
 
 PACKAGE_VERSION = $$(cat upstream/package/version)
 PATCH_VERSION = $$(cat version)
-VERSION = $(PACKAGE_VERSION).$(PATCH_VERSION)
+VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 
 .PHONY : default manual container version build push local
 
