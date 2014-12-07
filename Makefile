@@ -18,7 +18,7 @@ build:
 	tar -czv -C /tmp/skalibs-release -f skalibs.tar.gz .
 
 push:
-	git commit -am "$$(cat upstream/package/version)"
+	git commit -am "$$(cat upstream/package/version)" || true
 	ssh -oStrictHostKeyChecking=no git@github.com &>/dev/null || true
 	git tag -f "$$(cat upstream/package/version)"
 	git push --tags origin master
