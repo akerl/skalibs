@@ -9,7 +9,10 @@ VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 
 .PHONY : default manual container version build push local
 
-default: container
+default: upstream/Makefile container
+
+upstream/Makefile:
+	git submodule update --init
 
 manual:
 	./meta/launch /bin/bash || true
