@@ -1,7 +1,7 @@
 PACKAGE = skalibs
 BUILD_DIR = /tmp/$(PACKAGE)-build
 RELEASE_DIR = /tmp/$(PACKAGE)-release
-RELEASE_FILE = $(PACKAGE).tar.gz
+RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 
 PACKAGE_VERSION = $$(awk -F"=" '/^version/ {print $2}' upstream/package/info)
 PATCH_VERSION = $$(cat version)
