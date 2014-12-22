@@ -1,2 +1,0 @@
-#define HASDIRENT
-/* sysdep: +dirent */

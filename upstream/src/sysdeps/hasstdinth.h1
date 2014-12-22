@@ -1,2 +1,0 @@
-#undef HASSTDINTH
-/* sysdep: -stdinth */

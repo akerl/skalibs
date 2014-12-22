@@ -1,2 +1,0 @@
-#undef HASULONG32
-/* sysdep: -ulong32 */

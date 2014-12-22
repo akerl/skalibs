@@ -1,6 +1,0 @@
-sysdeps.h
-nonposix.h
-uint16.h
-bytestr.h
-djbunix.h
-socket.h

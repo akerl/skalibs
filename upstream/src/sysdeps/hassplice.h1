@@ -1,2 +1,0 @@
-#undef HASSPLICE
-/* sysdep: -splice */

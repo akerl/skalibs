@@ -1,2 +1,0 @@
-#undef HASSIGPROCMASK
-/* sysdep: -sigprocmask */

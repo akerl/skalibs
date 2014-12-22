@@ -1,2 +1,0 @@
-#define HASPIPE2
-/* sysdep: +pipe2 */

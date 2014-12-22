@@ -1,7 +1,0 @@
-sysdeps
-sysdeps.h
-socket.lib
-util.lib
-rt.lib
-sysclock.lib
-taianow.lib

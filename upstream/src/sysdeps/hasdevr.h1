@@ -1,2 +1,0 @@
-#undef HASDEVRANDOM
-/* sysdep: -devrandom */

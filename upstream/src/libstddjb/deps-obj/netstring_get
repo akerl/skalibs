@@ -1,6 +1,0 @@
-allreadwrite.h
-uint.h
-bytestr.h
-buffer.h
-stralloc.h
-netstring.h

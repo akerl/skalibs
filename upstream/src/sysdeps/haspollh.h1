@@ -1,2 +1,0 @@
-#undef HASPOLLH
-/* sysdep: -pollh */

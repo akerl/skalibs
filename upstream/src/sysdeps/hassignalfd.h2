@@ -1,2 +1,0 @@
-#define HASSIGNALFD
-/* sysdep: +signalfd */

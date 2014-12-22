@@ -1,2 +1,0 @@
-#undef HASMALLOC0
-/* sysdep: -malloc0 */

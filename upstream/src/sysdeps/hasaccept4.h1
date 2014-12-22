@@ -1,2 +1,0 @@
-#undef HASACCEPT4
-/* sysdep: -accept4 */
