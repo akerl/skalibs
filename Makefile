@@ -6,6 +6,7 @@ RELEASE_FILE = $(PACKAGE).tar.gz
 PACKAGE_VERSION = $$(cat upstream/package/version)
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
+CONF_FLAGS = --enable-static --enable-ipv6 --disable-slashpackage --enable-monotonic
 
 .PHONY : default manual container version build push local
 
@@ -23,9 +24,9 @@ container:
 build:
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
-	patch -d $(BUILD_DIR) -p1 < patch
+	cd $(BUILD_DIR) && ./configure --prefix=$(RELEASE_DIR) $(CONF_FLAGS)
 	make -C $(BUILD_DIR) install
-	tar -czv -C $(RELEASE_DIR) -f $(RELEASE_FILE) .
+	cd $(RELEASE_DIR) && tar -czvf $(RELEASE_FILE) *
 
 version:
 	@echo $$(($(PATCH_VERSION) + 1)) > version
