@@ -25,6 +25,7 @@ build:
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
 	cd $(BUILD_DIR) && ./configure --prefix=$(RELEASE_DIR) $(CONF_FLAGS)
+	make -C $(BUILD_DIR)
 	make -C $(BUILD_DIR) install
 	cd $(RELEASE_DIR) && tar -czvf $(RELEASE_FILE) *
 
