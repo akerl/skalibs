@@ -1,4 +1,5 @@
 PACKAGE = skalibs
+ORG = amylum
 BUILD_DIR = /tmp/$(PACKAGE)-build
 RELEASE_DIR = /tmp/$(PACKAGE)-release
 RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
@@ -37,7 +38,7 @@ push: version
 	ssh -oStrictHostKeyChecking=no git@github.com &>/dev/null || true
 	git tag -f "$(VERSION)"
 	git push --tags origin master
-	targit -a .github -c -f akerl/skalibs $(VERSION) $(RELEASE_FILE)
+	targit -a .github -c -f $(ORG)/$(PACKAGE) $(VERSION) $(RELEASE_FILE)
 
 local: build push
 
