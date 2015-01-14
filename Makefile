@@ -8,6 +8,7 @@ PACKAGE_VERSION = $$(awk -F= '/^version/ {print $$2}' upstream/package/info)
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 CONF_FLAGS = --enable-static --enable-ipv6 --disable-slashpackage --enable-monotonic
+PATH_FLAGS = --prefix=$(RELEASE_DIR) --dynlibdir=$(RELEASE_DIR)/usr/lib --libdir=$(RELEASE_DIR)/usr/lib/skalibs --sysdepdir=$(RELEASE_DIR)/usr/lib/skalibs/sysdeps --includedir=$(RELEASE_DIR)/usr/include
 
 .PHONY : default manual container version build push local
 
@@ -25,7 +26,7 @@ container:
 build:
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
-	cd $(BUILD_DIR) && CC="musl-gcc" ./configure --prefix=$(RELEASE_DIR) $(CONF_FLAGS)
+	cd $(BUILD_DIR) && CC="musl-gcc" ./configure --prefix=$(RELEASE_DIR) $(CONF_FLAGS) $(PATH_FLAGS)
 	make -C $(BUILD_DIR)
 	make -C $(BUILD_DIR) install
 	cd $(RELEASE_DIR) && tar -czvf $(RELEASE_FILE) *
