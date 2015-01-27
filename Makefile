@@ -26,7 +26,7 @@ container:
 build:
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
-	cd $(BUILD_DIR) && CC="musl-gcc" ./configure --prefix=$(RELEASE_DIR) $(CONF_FLAGS) $(PATH_FLAGS)
+	cd $(BUILD_DIR) && CC="musl-gcc" ./configure $(CONF_FLAGS) $(PATH_FLAGS)
 	make -C $(BUILD_DIR)
 	make -C $(BUILD_DIR) install
 	cd $(RELEASE_DIR) && tar -czvf $(RELEASE_FILE) *
