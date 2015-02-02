@@ -29,6 +29,8 @@ build:
 	cd $(BUILD_DIR) && CC="musl-gcc" ./configure $(CONF_FLAGS) $(PATH_FLAGS)
 	make -C $(BUILD_DIR)
 	make -C $(BUILD_DIR) install
+	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
+	cp upstream/COPYING $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)/LICENSE
 	cd $(RELEASE_DIR) && tar -czvf $(RELEASE_FILE) *
 
 version:
