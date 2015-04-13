@@ -7,7 +7,7 @@ RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PACKAGE_VERSION = $$(awk -F= '/^version/ {print $$2}' upstream/package/info)
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
-CONF_FLAGS = --enable-static --enable-ipv6 --disable-slashpackage --enable-monotonic
+CONF_FLAGS = --enable-static --enable-ipv6 --disable-slashpackage --enable-monotonic --disabled-shared
 PATH_FLAGS = --prefix=$(RELEASE_DIR) --dynlibdir=$(RELEASE_DIR)/usr/lib --libdir=$(RELEASE_DIR)/usr/lib/skalibs --sysdepdir=$(RELEASE_DIR)/usr/lib/skalibs/sysdeps --includedir=$(RELEASE_DIR)/usr/include
 
 .PHONY : default submodule manual container version build push local
