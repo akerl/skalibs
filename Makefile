@@ -8,7 +8,7 @@ PACKAGE_VERSION = $$(awk -F= '/^version/ {print $$2}' upstream/package/info)
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 CONF_FLAGS = --enable-static --enable-ipv6 --disable-slashpackage --enable-monotonic --enable-static-libc --disable-shared
-PATH_FLAGS = --prefix=$(RELEASE_DIR) --dynlibdir=$(RELEASE_DIR)/usr/lib --libdir=$(RELEASE_DIR)/usr/lib/skalibs --sysdepdir=$(RELEASE_DIR)/usr/lib/skalibs/sysdeps --includedir=$(RELEASE_DIR)/usr/include
+PATH_FLAGS = --prefix=/usr
 
 .PHONY : default submodule manual container version build push local
 
@@ -28,7 +28,7 @@ build: submodule
 	cp -R upstream $(BUILD_DIR)
 	cd $(BUILD_DIR) && CC="musl-gcc" ./configure $(CONF_FLAGS) $(PATH_FLAGS)
 	make -C $(BUILD_DIR)
-	make -C $(BUILD_DIR) install
+	make -C $(BUILD_DIR) DESTDIR=$(RELEASE_DIR) install
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
 	cp upstream/COPYING $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)/LICENSE
 	cd $(RELEASE_DIR) && tar -czvf $(RELEASE_FILE) *
