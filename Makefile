@@ -7,7 +7,7 @@ RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PACKAGE_VERSION = $$(awk -F= '/^version/ {print $$2}' upstream/package/info)
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
-CONF_FLAGS = --enable-static --enable-ipv6 --disable-slashpackage --enable-monotonic --enable-static-libc --disable-shared
+CONF_FLAGS = --enable-ipv6 --disable-slashpackage --enable-monotonic
 PATH_FLAGS = --prefix=/usr
 
 .PHONY : default submodule manual container version build push local
