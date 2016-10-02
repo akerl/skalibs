@@ -1,0 +1,21 @@
+name 'skalibs'
+org 'amylum'
+
+licenses 'COPYING'
+
+configure_flags(
+  prefix: '/usr',
+  'enable-monotonic': nil
+)
+
+harden
+
+build do
+  configure
+  make
+  install
+end
+
+test do
+  # TODO: add tests
+end
