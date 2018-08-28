@@ -1,7 +1,7 @@
 skalibs
 =========
 
-[![Build Status](https://img.shields.io/circleci/project/amylum/skalibs/master.svg)](https://circleci.com/gh/amylum/skalibs)
+[![Build Status](https://img.shields.io/travis/com/amylum/skalibs.svg)](https://travis-ci.com/amylum/skalibs)
 [![GitHub release](https://img.shields.io/github/release/amylum/skalibs.svg)](https://github.com/amylum/skalibs/releases)
 [![ISC Licensed](https://img.shields.io/badge/license-ISC-green.svg)](https://tldrlegal.com/license/-isc-license)
 
